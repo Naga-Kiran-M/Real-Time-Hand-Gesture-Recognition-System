@@ -26,11 +26,26 @@ The system recognizes the following gestures:
 1. Clone this repository:
    ```bash
    git clone https://github.com/yourusername/Real-Time-Hand-Gesture-Recognition-System.git
+   cd Real-Time-Hand-Gesture-Recognition-System
+   ```
+
+## Environment Setup
+
+This project requires Python 3.x and several dependencies. Total environment size is approximately 2.14 GB.
+
+1. Create and activate a virtual environment:
+   ```bash
+   python -m venv venv
+   
+   # On Linux/macOS:
+   source venv/bin/activate
+   
+   # On Windows:
+   venv\Scripts\activate
    ```
 
 2. Install required dependencies:
    ```bash
-   cd Real-Time-Hand-Gesture-Recognition-System
    pip install -r requirements.txt
    ```
 
@@ -38,7 +53,7 @@ The system recognizes the following gestures:
 Run the system with the following command:
 
 ```bash
-python main.py
+python src/main.py
 ```
 
 The webcam will open, and the system will start recognizing hand gestures in real-time.
