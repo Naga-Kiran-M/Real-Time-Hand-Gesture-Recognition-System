@@ -1,0 +1,68 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.venv/
+venv/
+ENV/
+env/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# IDE settings
+.vscode/
+.idea/
+
+# Python packaging
+*.egg-info/
+build/
+dist/
+
+# Logs and debug
+*.log
+*.bak
+*.swp
+
+# TensorFlow/Keras checkpoints
+*.h5
+*.ckpt
+checkpoint/
+checkpoints/
+saved_model/
+*.pb
+*.tflite
+
+# NumPy cache
+*.npy
+*.npz
+
+# Project-specific: collected hand gesture data and models
+assets/*.npy
+models/
+test_outputs/
+train_outputs/
+
+# Ignore exported/converted video frames or temporary images
+frames/
+*.mp4
+*.avi
+*.mov
+*.jpg
+*.png
+
+# Ignore large dataset files
+dataset/
+data/
+*.zip
+*.tar.gz
+
+# Ignore dotenv or local secrets
+.env
+.env.local
