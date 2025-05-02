@@ -1,6 +1,0 @@
-__pycache__/
-*.pyc
-*.pyo
-.DS_Store
-venv/
-git remote add origin https://github.com/Naga-Kiran-M/AR_Interaction_System.git
