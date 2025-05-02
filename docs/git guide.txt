@@ -1,0 +1,80 @@
+### Git Operations Explained for Beginners
+
+#### 1. Git Initialization
+
+- **What We Did**: Initialized a Git repository in the project folder.
+- **Command Used**: `git init`
+- **Explanation**: Created a `.git` folder for tracking file changes.
+
+#### 2. Adding Files to the Repository
+
+- **What We Did**: Added all files to the staging area.
+- **Command Used**: `git add .`
+- **Explanation**: Prepares files to be committed.
+
+#### 3. Making the First Commit
+
+- **What We Did**: Saved the snapshot of the current state of the project.
+- **Command Used**: `git commit -m "Initial commit"`
+- **Explanation**: Logs the current state with a descriptive message.
+
+#### 4. Setting Up the Remote Repository (GitHub)
+
+- **What We Did**: Linked local repo to a GitHub repository.
+- **Command Used**: `git remote add origin https://github.com/yourusername/your-repository.git`
+- **Explanation**: Allows pushing changes to GitHub.
+
+#### 5. Pushing Changes to GitHub
+
+- **What We Did**: Uploaded local commits to GitHub.
+- **Command Used**: `git push -u origin master`
+- **Explanation**: Sets upstream tracking and pushes code.
+
+#### 6. Fixing Issues with Git Remote URL
+
+- **What We Did**: Corrected the remote URL.
+- **Command Used**: `git remote set-url origin https://github.com/yourusername/your-repository.git`
+- **Explanation**: Updates the link to the correct GitHub repo.
+
+---
+
+### Troubleshooting Document
+
+#### 1. Error: "remote: Repository not found."
+
+- **Cause**: Invalid or non-existent GitHub repository.
+- **Solution**: Create the repo on GitHub, use `git remote set-url`, and push again.
+
+#### 2. Error: "remote origin already exists."
+
+- **Cause**: Remote URL already set.
+- **Solution**: Use `git remote set-url` to update it.
+
+#### 3. Error: "fatal: repository not found"
+
+- **Cause**: Repository URL incorrect or doesn't exist.
+- **Solution**: Create the repo, set the correct URL, and push again.
+
+#### 4. Error: "Unable to access... port 443"
+
+- **Cause**: Network or credentials issue.
+- **Solution**: Check internet connection or switch to SSH.
+
+#### 5. Error: "Permission denied" or "Authentication failed."
+
+- **Cause**: Authentication problems.
+- **Solution**: Configure Git user or use personal access token.
+
+---
+
+### Summary of Key Commands
+
+```bash
+git init
+git add .
+git commit -m "Your commit message"
+git remote add origin https://github.com/yourusername/your-repository.git
+git push -u origin master
+git remote set-url origin https://github.com/yourusername/your-repository.git
+```
+

@@ -1,0 +1,26 @@
+Key Changes and Explanations:
+Library Installation Check:
+
+install_libraries() checks and installs any missing libraries (numpy, tensorflow, opencv-python, scikit-learn).
+
+The script now attempts to import and install these libraries before running the rest of the code.
+
+Model and Label Encoder Loading:
+
+Model is loaded from a pre-defined path (by default, models/hand_gesture_model_final.h5).
+
+LabelEncoder is used to convert numerical predictions back into class labels.
+
+Webcam Feed:
+
+The webcam is accessed using OpenCV. If the webcam isn't available, the script exits with an error message.
+
+Frame Processing: The frames are processed into grayscale, resized, and normalized before being passed to the trained model for gesture prediction.
+
+Gesture Prediction:
+
+The script uses the trained model to predict gestures, displaying both the predicted gesture and the confidence level on the webcam feed.
+
+Exit Condition:
+
+The script continually shows the webcam feed with predictions until the user presses the 'q' key to quit.

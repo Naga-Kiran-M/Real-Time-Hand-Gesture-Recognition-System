@@ -1,0 +1,41 @@
+Key Improvements: between train_gesture_model and V1
+Normalization with StandardScaler: This ensures that all features are scaled to have a mean of 0 and a standard deviation of 1, which can improve model training stability.
+
+Model Architecture Enhancements:
+
+Added BatchNormalization after the dense layers to improve model convergence.
+
+Added Dropout for regularization to prevent overfitting.
+
+Callbacks:
+
+EarlyStopping: Stops training if the validation loss does not improve after 5 epochs, helping avoid overfitting and reducing unnecessary computation.
+
+ModelCheckpoint: Saves the best model during training based on validation loss.
+
+Training History Plot: After training, the accuracy and loss curves for both training and validation sets are plotted to visualize the model's performance over epochs.
+
+Function Modularization: The script has been divided into smaller functions to improve readability and modularity, making it easier to maintain.
+
+Expected Improvements:
+Better Model Training: With the added regularization (batch normalization and dropout) and early stopping, the model should converge faster and avoid overfitting.
+
+Training Visualization: You will be able to visually inspect the model's performance over the epochs.
+
+More Efficient Code: The code is cleaner, and function modularization will help in extending or debugging specific parts of the script.
+
+Let me know if you'd like any more adjustments!
+
+Explanation of Changes:
+Automatic Directory Setup:
+
+SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__)): This line gets the absolute path of the script.
+
+DATA_DIR = os.path.join(SCRIPT_DIR, 'data') and MODEL_DIR = os.path.join(SCRIPT_DIR, 'models'): These set the data and models directories as subfolders of the script's directory. If the script is placed in a different location, it will still work without needing to manually modify the paths.
+
+Relative Pathing: The data and model directories will now be based on the script's location, so if you move your script around, the paths will automatically adjust to where the script is located.
+
+Benefits:
+Portability: You can move the script and its directories around without worrying about hardcoded absolute paths.
+
+Flexibility: Makes it easier to run the script in different environments without needing to adjust the directory paths manually.

@@ -1,0 +1,14 @@
+Explanation:
+Initialization of MediaPipe Hands: The Hands module from MediaPipe is initialized with two hands detection, high confidence values for better tracking, and drawing utility to display the landmarks.
+
+Webcam Feed: OpenCV's VideoCapture is used to get the webcam feed. The frame dimensions are set to 640x480 to balance performance and quality.
+
+Processing Frames: The loop reads frames from the webcam, flips them horizontally for a mirror effect (this makes the tracking feel more natural), and converts the frames to RGB (required by MediaPipe). The process() method detects hands and returns their landmarks.
+
+Drawing Landmarks: If hand landmarks are detected, the landmarks are drawn onto the frame using drawing_utils.draw_landmarks() from MediaPipe.
+
+Displaying the Frame: The frame is resized to fit the display window, and the processed frame (with landmarks) is displayed using imshow().
+
+Exit on 'q': The program listens for the 'q' key to break out of the loop and close the webcam feed. This is useful for ending the program smoothly.
+
+Error Handling: A KeyboardInterrupt is handled to allow graceful termination of the program with a manual interruption (e.g., pressing Ctrl + C).

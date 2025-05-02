@@ -1,0 +1,46 @@
+### 1. **Initial Setup Challenges:**
+   - **Challenge:** Setting up the project structure and environment.
+   - **Solution:** You created a local development environment using WSL2 and VS Code with Ubuntu, then you chose ARCore for AR/VR interaction. We decided to use OpenCV, MediaPipe, and Python libraries instead, creating a more Python-native solution for the AR/VR project.
+
+### 2. **Hand Gesture Recognition Model Development:**
+   - **Challenge:** Initial hand gesture recognition system was cluttered, especially with gesture labels displayed on the screen.
+   - **Solution:** We iterated through multiple versions. Version 1 displayed gesture labels clearly but was cluttered, and Version 2 had a smoother video feed but lacked some features. You wanted to combine the best of both versions into a cleaner final version, focusing on clarity and functionality.
+
+### 3. **Dataset and Model Training:**
+   - **Challenge:** The model was not detecting gestures accurately, and there were issues with classifying multiple gestures (e.g., all gestures pointing to "open hand" or "peace sign").
+   - **Solution:** We worked on analyzing the gesture dataset. You collected gesture data in `.npy` format and we examined this data to ensure it was properly formatted and normalized for model training.
+
+### 4. **Data Analysis and Dimensionality Reduction:**
+   - **Challenge:** The model was struggling to distinguish between similar gestures due to issues with the data itself.
+   - **Solution:** We implemented **Principal Component Analysis (PCA)** to reduce the dimensionality of the dataset and plot the gestures in a 2D space. This helped visualize gesture clusters and identify similarity patterns between gestures, allowing us to identify potential data quality issues.
+
+### 5. **Improving PCA Visualization:**
+   - **Challenge:** The PCA plots were not very clean and lacked clarity in visualizing the relationships between gestures.
+   - **Solution:** We improved the PCA implementation by adjusting how we plotted the gestures, improving plot aesthetics and making the data visualization clearer.
+
+### 6. **TensorFlow Model Training:**
+   - **Challenge:** There was an issue with the **import** of `tensorflow.keras.callbacks`, which was a warning from VS Code and Pylance.
+   - **Solution:** We ensured the TensorFlow package was installed correctly in the virtual environment. You also selected the right Python interpreter in VS Code and resolved the import issue, making the training script work smoothly.
+
+### 7. **Dynamic Path Detection:**
+   - **Challenge:** Hardcoding paths in the training and analysis scripts made the project less flexible.
+   - **Solution:** We modified the `train_gesture_model.py` script to automatically detect the paths for the dataset (`DATA_DIR`) and model directory (`MODEL_DIR`) based on the project directory structure. This made the code more portable and dynamic, eliminating the need for manual path updates.
+
+### 8. **Model Export and Optimization:**
+   - **Challenge:** Once the model was trained, you needed to save and convert it into formats suitable for deployment, specifically TensorFlow Lite for mobile devices.
+   - **Solution:** We saved the model in both Keras `.h5` format and converted it to TensorFlow Lite `.tflite` format. This allowed for efficient deployment on mobile/edge devices. Additionally, gesture labels were saved in a text file for easy mapping during inference.
+
+### 9. **VS Code Integration and Environment Issues:**
+   - **Challenge:** Issues arose with VS Code not recognizing the installed TensorFlow package, likely due to a mismatch between the virtual environment and the selected Python interpreter.
+   - **Solution:** We ensured the correct Python interpreter was selected in VS Code, reloaded the environment, and confirmed the TensorFlow installation by running simple tests.
+
+---
+
+### Final Working Version:
+
+After addressing these challenges step-by-step, the final working version of the AR/VR gesture recognition system includes:
+
+1. **Cleaner User Interface:** Combining the best features of both versions, with a smoother video feed and clear gesture labels.
+2. **Data Analysis & Quality Check:** Using PCA to visualize and analyze gesture data, identifying similarities and ensuring quality before retraining the model.
+3. **Fully Trained Model:** The model was trained using hand landmark data, saving the trained Keras model and converting it to TensorFlow Lite for mobile deployment.
+4. **Dynamic Path Detection:** Automatically detecting paths for dataset and model files, making the code more portable and easier to maintain.
